@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="bota aqui sua descrição" />
+  <title>NOME DA EMPRESA</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+    
+  <!-- CSS Externo -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!--  HEADER / NAV  -->
+  <!-- aqui começa o cabeçalho e a barra de navegação com TAGs semânticas -->
+  <header class="site-header" role="banner">
+    <nav class="navbar" aria-label="Navegação principal">
+      <a href="#inicio" class="logo" aria-label="Doces da Bê — página inicial">
+        <span class="logo-icon" aria-hidden="true">🎂</span>
+        <span class="logo-text">NOME <em>DA </em>EMPRESA</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks"
+        aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+<!-- aqui começa a barra de navegação da parte superior do site -->
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar modo claro/escuro" title="Alternar tema">
+        <span class="theme-icon" aria-hidden="true">🌙</span>
+      </button>
+    </nav>
+  </header>
+<!-- aqui esta sendo usado uma classe de css para estilização (hero) -->
+
+  <main id="inicio">
+    <section class="hero" aria-label="Boas-vindas">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Confeitaria Artesanal da Nome da empresa</p>
+        <h1 class="hero-title">Feito com amor,<br /><em>do jeito que você merece.</em></h1>
+        <p class="hero-sub">Bolos personalizados, docinhos finos e sobremesas que contam histórias. Encomende agora e
+          receba na sua porta.</p>
+        <div class="hero-cta">
+          <a href="#cardapio" class="btn btn-primary">Ver Cardápio</a>
+          <a href="#contato" class="btn btn-outline">Fazer Encomenda</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-img-wrap">
+          <img src="https://images.unsplash.com/photo-1586985289906-406988974504?w=700&q=80"
+            alt="Bolo de andar decorado com flores e frutas frescas" class="hero-img" loading="eager" />
+          <div class="hero-badge">
+            <span>✨</span>
+            <strong>100%</strong>
+            <span>Artesanal</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- aqui vai os destaques -->
+    <section class="highlights" aria-label="Nossos destaques">
+      <article class="highlight-card">
+        <span class="highlight-icon" aria-hidden="true">🎂</span>
+        <h3>Bolos de Festa</h3>
+        <p>Naked cake, bolo de andar, temático — qualquer estilo para o seu momento especial.</p>
+      </article>
+      <article class="highlight-card">
+        <span class="highlight-icon" aria-hidden="true">🍫</span>
+        <h3>Docinhos Finos</h3>
+        <p>Brigadeiros gourmet, trufa, beijinho e muito mais. Perfeitos para festas e eventos.</p>
+      </article>
+      <article class="highlight-card">
+        <span class="highlight-icon" aria-hidden="true">🎁</span>
+        <h3>Kits Presenteáveis</h3>
+        <p>Caixas montadas com carinho para presentear quem você ama em qualquer ocasião.</p>
+      </article>
+    </section>
+
+    <!-- cardapio -->
+    <section class="cardapio" id="cardapio" aria-label="Cardápio">
+      <div class="section-header">
+        <p class="section-eyebrow">O que fazemos</p>
+        <h2>CARDAPIO É AQUI</h2>
+        <p class="section-sub">Tudo feito na hora, com ingredientes selecionados e muito carinho.</p>
+      </div>
+
+      <div class="cardapio-grid">
+
+        <article class="produto-card" tabindex="0">
+          <figure class="produto-img-wrap">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&q=80"
+              alt="Bolo de chocolate com ganache e morangos frescos" class="produto-img" loading="lazy" />
+          </figure>
+          <div class="produto-info">
+            <span class="produto-tag">Mais pedido</span>
+            <h3 class="produto-nome">QUAL É O BOLO</h3>
+            <p class="produto-desc">INFORMAÇÕES DO BOLO TIPO: Massa fofinha com ganache
+              cremosa e morangos frescos. Tamanhos P, M e G. </p>
+            <p class="produto-preco">A partir de <strong>VALOR É AQUI</strong></p>
+          </div>
+        </article>
+
+        <article class="produto-card" tabindex="0">
+          <figure class="produto-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80"
+              alt="Naked cake com frutas vermelhas e chantilly" class="produto-img" loading="lazy" />
+          </figure>
+          <div class="produto-info">
+            <span class="produto-tag">Especial</span>
+            <h3 class="produto-nome">NOME DO BOLO</h3>
+            <p class="produto-desc"> INFORMAÇÕES DO BOLO TIPO: Massa fofinha com ganache
+              cremosa e morangos frescos. Tamanhos P, M e G. </p>
+            <p class="produto-preco">A partir de <strong>VALOR É AQUI</strong></p>
+          </div>
+        </article>
+
+        <article class="produto-card" tabindex="0">
+          <figure class="produto-img-wrap">
+            <img src="https://images.unsplash.com/photo-1612203985729-70726954388c?w=500&q=80"
+              alt="Caixa com brigadeiros gourmet variados" class="produto-img" loading="lazy" />
+          </figure>
+          <div class="produto-info">
+            <span class="produto-tag">Novidade</span>
+            <h3 class="produto-nome">BOTE AS NOVIDAES AQUI</h3>
+            <p class="produto-desc">AS ESPECIFICAÇÕES AQUI TIPO: Caixa com 9 ou 16 unidades. Sabores: 
+              tradicional, pistache, limão siciliano e mais.
+            </p>
+            <p class="produto-preco">A partir de <strong>VALOR É AQUI</strong></p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- aqui começa a seção sobre da empresa -->
+    <section class="sobre" id="sobre" aria-label="Sobre a confeitaria">
+      <div class="sobre-img-col">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+          alt="Confeiteira decorando um bolo com manga de confeitar" class="sobre-img" loading="lazy" />
+      </div>
+      <div class="sobre-text-col">
+        <p class="section-eyebrow">SE TIVER HISTORIA PODE COLOCAR AQUI</code> AQUI</p>
+        <h2>Feito com as mãos, entregue com o coração</h2>
+        <p>BLABLABLA BLABLABLA NÃO SEI QUE LÁ, SEI LÁ O QUE </p>
+        <p>QUAL TIPO DE PRODUTO VOCÊ TRABALHA </p>
+        <ul class="sobre-lista" role="list">
+<!--  informações do que você faz -->
+          <li>✔ Ingredientes frescos e selecionados</li>
+          <li>✔ Personalização completa</li>
+          <li>✔ Entrega na sua cidade</li>
+          <li>✔ CNPJ ativo — Nota Fiscal disponível</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- formulário de contrato e encomenda -->
+    <section class="contato" id="contato" aria-label="Formulário de encomenda">
+      <div class="section-header">
+        <p class="section-eyebrow">Fale comigo</p>
+        <h2>Faça sua Encomenda</h2>
+        <p class="section-sub">Preencha os campos abaixo e entrarei em contato em até 24 horas.</p>
+      </div>
+
+      <form class="form-encomenda" id="formEncomenda" novalidate aria-label="Formulário de encomenda">
+<!-- formulÁrio de cadastramento começa aqui -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nome">Nome completo <span aria-hidden="true">*</span></label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" aria-required="true" autocomplete="name" />
+            <span class="form-error" id="nomeErr" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" aria-required="true"
+              autocomplete="email" />
+            <span class="form-error" id="emailErr" role="alert" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="telefone">WhatsApp / Telefone <span aria-hidden="true">*</span></label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 90000-0000" aria-required="true"
+              autocomplete="tel" maxlength="15" />
+            <span class="form-error" id="telefoneErr" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="produto">Produto desejado <span aria-hidden="true">*</span></label>
+            <select id="produto" name="produto" aria-required="true">
+<!-- aqui você pode adicionar ou remover opções de produto que você oferece -->
+              <option value="">Selecione...</option>
+              <option value="bolo-festa">Bolo de Festa</option>
+              <option value="naked-cake">Naked Cake</option>
+              <option value="brigadeiro">Brigadeiro Gourmet</option>
+              <option value="kit">Kit Presenteável</option>
+              <option value="outro">Outro</option>
+            </select>
+            <span class="form-error" id="produtoErr" role="alert" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="data">Data da entrega desejada <span aria-hidden="true">*</span></label>
+            <input type="date" id="data" name="data" aria-required="true" />
+            <span class="form-error" id="dataErr" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="pessoas">Número de pessoas (porções)</label>
+            <input type="number" id="pessoas" name="pessoas" placeholder="Ex: 20" min="1" max="500" />
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="mensagem">Detalhes do pedido / Personalização</label>
+          <textarea id="mensagem" name="mensagem" rows="4"
+            placeholder="Conte-me sobre cores, tema, sabores preferidos, restrições alimentares..."></textarea>
+        </div>
+
+        <div class="form-group full-width form-check">
+          <input type="checkbox" id="lgpd" name="lgpd" aria-required="true" />
+          <label for="lgpd">Concordo que meus dados sejam usados para responder à minha encomenda.</label>
+          <span class="form-error" id="lgpdErr" role="alert" aria-live="polite"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit" id="btnSubmit">
+          Enviar Encomenda 🎂
+        </button>
+
+        <div class="form-success" id="formSuccess" role="alert" aria-live="polite" hidden>
+          🎉 Encomenda recebida! Entrarei em contato em breve. Obrigada!
+        </div>
+
+      </form>
+    </section>
+  </main>
+<!--não esqueça de colocar seu cnpj na quarta linha -->
+  <!-- aqui é o rodapé FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-brand">🎂 NOME <em>DA</em> EMPRESA</p>
+      <p class="footer-info"> COLOCA SEU CNPJ AQUI · Confeitaria Artesanal</p>
+      <p class="footer-copy">© 2025 NOME DA EMPRESA. Feito com muito amor 🤍</p>
+    </div>
+  </footer>
+
+<!--aqui voce vai fazer as alterações que vai aparecer no pop-up -->
+<!-- ===== POP-UP BOAS-VINDAS ===== -->
+<div class="modal-overlay" id="modalBemVindo" hidden role="dialog" aria-modal="true" aria-labelledby="modalBemVindoTitulo">
+  <div class="modal-box">
+
+    <!-- Botão de fechar -->
+    <button class="modal-close" id="fecharBemVindo" aria-label="Fechar pop-up">✕</button>
+
+    <!-- Ícone -->
+    <div class="modal-icon" aria-hidden="true">🎂</div>
+
+    <!-- Título -->
+    <h2 class="modal-titulo" id="modalBemVindoTitulo">Bem-vinda à (NOME DA EMPRESA)</h2>
+
+    <!-- Texto -->
+    <p class="modal-texto">Que bom ter você aqui! Faço bolos artesanais, docinhos e kits presenteáveis com muito carinho. 🤍</p>
+
+    <!-- Horários -->
+    <div class="modal-horarios">
+      <p class="modal-horarios-titulo">🕐 Horários de Atendimento</p>
+      <ul>
+        <li><strong>Segunda a Sexta</strong> — 9h às 18h</li>
+        <li><strong>Sábado</strong> — 9h às 14h</li>
+        <li><strong>Domingo</strong> — Fechado</li>
+      </ul>
+      <p class="modal-horarios-obs">⚠️ Encomendas com no mínimo 2 dias de antecedência.</p>
+    </div>
+
+    <!-- Botão -->
+    <button class="btn btn-primary modal-btn" id="fecharBemVindoBtn">Fazer Encomenda 🎂</button>
+
+  </div>
+</div>
+<!--  aqui que fica o link para o Jscript -->
+  <script src="script.js"></script>
+</body>
+
+</html>

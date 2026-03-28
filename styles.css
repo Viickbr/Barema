@@ -1,0 +1,1023 @@
+/*OBS: :root É onde você declara as variáveis que serão usadas em todo o site
+                É onde você declara as variáveis que serão usadas em todo o site.*/
+
+/* aqui nós podemos definir os temas como claro/escuro */
+
+:root {
+    --clr-bg: #fdf6ee;
+    --clr-surface: #fff8f0;
+    --clr-card: #ffffff;
+    --clr-text: #2b1a0e;
+    --clr-text-muted: #7a5c45;
+    --clr-accent: #c9614a;
+    --clr-accent-light: #f5d9d0;
+    --clr-accent-dark: #a64835;
+    --clr-gold: #c9a227;
+    --clr-border: #e8d8cc;
+    --clr-nav-bg: rgba(253, 246, 238, 0.92);
+    --shadow-soft: 0 4px 24px rgba(43, 26, 14, 0.08);
+    --shadow-card: 0 8px 32px rgba(43, 26, 14, 0.1);
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 28px;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --transition: 0.25s ease;
+}
+
+[data-theme="dark"] {
+    --clr-bg: #1a0f07;
+    --clr-surface: #231408;
+    --clr-card: #2e1a0e;
+    --clr-text: #f5e8d8;
+    --clr-text-muted: #c4a882;
+    --clr-accent: #e07a62;
+    --clr-accent-light: #3d1f14;
+    --clr-accent-dark: #f09a82;
+    --clr-border: #4a2e1e;
+    --clr-nav-bg: rgba(26, 15, 7, 0.95);
+    --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.3);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* RESET serve para deixar o site adaptável para diferentes navegadores 
+  BASE define o padrão do estilo do site */
+
+/*  reiniciar e base -RESET & BASE */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--clr-bg);
+    color: var(--clr-text);
+    line-height: 1.65;
+    transition: background-color 0.35s ease, color 0.35s ease;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/*  tipografia - TYPOGRAPHY */
+/*é aqui serão definidos os estilos dos textos como altura da linha,familia da fonte, cor das letras do site*/
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+    line-height: 1.2;
+    color: var(--clr-text);
+}
+
+h1 {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+em {
+    font-style: italic;
+    color: var(--clr-accent);
+}
+
+/*  botões */
+/* aqui serão definidos os estilos dos botões do site */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all var(--transition);
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background-color: var(--clr-accent);
+    color: #fff;
+    border-color: var(--clr-accent);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    background-color: var(--clr-accent-dark);
+    border-color: var(--clr-accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(201, 97, 74, 0.35);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--clr-text);
+    border-color: var(--clr-border);
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+    border-color: var(--clr-accent);
+    color: var(--clr-accent);
+    transform: translateY(-2px);
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+}
+
+/*  navbar  */
+/* aqui serão definidos os estilos da barra de navegação */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: var(--clr-nav-bg);
+    border-bottom: 1px solid var(--clr-border);
+    transition: background-color 0.35s ease;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.logo-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--clr-text-muted);
+    position: relative;
+    padding-bottom: 4px;
+    transition: color var(--transition);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--clr-accent);
+    border-radius: 2px;
+    transition: width var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: var(--clr-accent);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.theme-toggle {
+    background: var(--clr-accent-light);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition), transform var(--transition);
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg);
+    background: var(--clr-accent);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: var(--radius-sm);
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--clr-text);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/*  a  classe hero serve para estilizar.
+    Está dizendo: "aplique esse visual em tudo que tiver a classe hero",
+    Identificar — facilita a leitura do código, você bate o olho e 
+    já saber que aquela seção é a parte principal do topo */
+/*hero     FLEXBOX */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+    min-height: 100vh;
+    padding: 120px 48px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 560px;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--clr-accent);
+    background: var(--clr-accent-light);
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    margin-bottom: 20px;
+}
+
+.hero-sub {
+    font-size: 1.05rem;
+    color: var(--clr-text-muted);
+    margin-bottom: 36px;
+    max-width: 440px;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-img-wrap {
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+}
+
+.hero-img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    animation: floatImg 6s ease-in-out infinite;
+}
+
+@keyframes floatImg {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.hero-badge {
+    position: absolute;
+    bottom: 24px;
+    left: -20px;
+    background: var(--clr-card);
+    border-radius: var(--radius-md);
+    padding: 12px 18px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--clr-text-muted);
+    border: 1px solid var(--clr-border);
+    animation: fadeInLeft 0.8s 0.4s both;
+}
+
+.hero-badge strong {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--clr-accent);
+    line-height: 1;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* aqui está a seção dos 3 cards que etão no topo do site */
+/*HIGHLIGHTS (Flexbox) */
+
+.highlights {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 48px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.highlight-card {
+    flex: 1;
+    min-width: 200px;
+    max-width: 320px;
+    background: var(--clr-card);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-md);
+    padding: 32px 28px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.highlight-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card);
+}
+
+.highlight-icon {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 14px;
+}
+
+.highlight-card h3 {
+    margin-bottom: 8px;
+    color: var(--clr-accent);
+}
+
+.highlight-card p {
+    font-size: 0.9rem;
+    color: var(--clr-text-muted);
+}
+
+/*cabeçalho da página utilizando HTML semântico para auxiliar na leitura do navegador e na acessibilidade, 
+pois os Apps de leitor de tela conseguem identificar a estrutura da página */
+/* SECTION HEADER  */
+.section-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-eyebrow {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--clr-accent);
+    margin-bottom: 10px;
+}
+
+.section-sub {
+    font-size: 1rem;
+    color: var(--clr-text-muted);
+    max-width: 480px;
+    margin: 10px auto 0;
+}
+
+/* aqui está a seção do cardápio utilizando CSS Grid para deixar o layout mais organizado */
+/*  CARDÁPIO (CSS Grid) */
+.cardapio {
+    background-color: var(--clr-surface);
+    padding: 80px 48px;
+}
+
+.cardapio>.section-header,
+.cardapio-grid {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cardapio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+}
+
+.produto-card {
+    background: var(--clr-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--clr-border);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition), box-shadow var(--transition);
+    cursor: pointer;
+}
+
+.produto-card:hover,
+.produto-card:focus-visible {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-card);
+    outline: none;
+}
+
+.produto-img-wrap {
+    overflow: hidden;
+    height: 220px;
+    margin: 0;
+}
+
+.produto-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.produto-card:hover .produto-img {
+    transform: scale(1.05);
+}
+
+.produto-info {
+    padding: 20px;
+}
+
+.produto-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--clr-accent);
+    background: var(--clr-accent-light);
+    padding: 3px 10px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+
+.produto-nome {
+    margin-bottom: 6px;
+}
+
+.produto-desc {
+    font-size: 0.88rem;
+    color: var(--clr-text-muted);
+    margin-bottom: 12px;
+}
+
+.produto-preco {
+    font-size: 0.9rem;
+    color: var(--clr-text);
+}
+
+.produto-preco strong {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--clr-accent);
+}
+
+/* aqui está a seção sobre a empresa, também utilizando Flexbox para ajudar no layout da página */
+/* sOBRE (Flexbox)  */
+.sobre {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding: 80px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sobre-img-col {
+    flex: 1;
+    max-width: 480px;
+}
+
+.sobre-img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.sobre-text-col {
+    flex: 1;
+}
+
+.sobre-text-col h2 {
+    margin: 10px 0 20px;
+}
+
+.sobre-text-col p {
+    color: var(--clr-text-muted);
+    margin-bottom: 14px;
+    font-size: 0.97rem;
+}
+
+.sobre-lista {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sobre-lista li {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--clr-text);
+}
+
+/* Está parte é o formulário de contato */
+
+/*OBS: :root É onde você declara as variáveis que serão usadas em todo o site
+                É onde você declara as variáveis que serão usadas em todo o site.*/
+/* FORMULÁRIO */
+
+.contato {
+    background-color: var(--clr-surface);
+    padding: 80px 48px;
+}
+
+.contato>.section-header,
+.form-encomenda {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-encomenda {
+    background: var(--clr-card);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    padding: 40px 40px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--clr-text);
+}
+
+.form-group label span {
+    color: var(--clr-accent);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 12px 16px;
+    border: 1.5px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+    background: var(--clr-bg);
+    color: var(--clr-text);
+    transition: border-color var(--transition), box-shadow var(--transition);
+    outline: none;
+    width: 100%;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--clr-text-muted);
+    opacity: 0.6;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--clr-accent);
+    box-shadow: 0 0 0 3px rgba(201, 97, 74, 0.15);
+}
+
+.form-group input.invalid,
+.form-group select.invalid,
+.form-group textarea.invalid {
+    border-color: #e53e3e;
+}
+
+.form-error {
+    font-size: 0.78rem;
+    color: #e53e3e;
+    min-height: 14px;
+}
+
+.form-check {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.form-check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    accent-color: var(--clr-accent);
+}
+
+.form-check label {
+    font-size: 0.82rem;
+    color: var(--clr-text-muted);
+    cursor: pointer;
+}
+
+.btn-submit {
+    align-self: flex-start;
+    font-size: 1rem;
+    padding: 16px 36px;
+}
+
+.form-success {
+    background: #d4edda;
+    color: #155724;
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+[data-theme="dark"] .form-success {
+    background: #1a3a22;
+    color: #7de891;
+}
+
+/*rodapé da página utilizando HTML semântico para auxiliar na leitura do navegador e na acessibilidade, 
+pois os Apps de leitor de tela conseguem identificar a estrutura da página */
+
+/* RODAPÉ - FOOTER */
+.site-footer {
+    background: var(--clr-text);
+    color: var(--clr-bg);
+    padding: 40px 48px;
+    text-align: center;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-brand {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+}
+
+.footer-info {
+    font-size: 0.82rem;
+    opacity: 0.6;
+}
+
+.footer-copy {
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+/*  o media query serve para ajustar o layout em diferentes tamanhos de tela 
+    ele trabalha juntamente com flexbox e Grid */
+/* MEDIA QUERIES (Responsividade)*/
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 24px 60px;
+        min-height: auto;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-sub {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .hero-img {
+        height: 380px;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .hero-badge {
+        left: 0;
+    }
+
+    .sobre {
+        flex-direction: column;
+        padding: 60px 24px;
+    }
+
+    .sobre-img-col {
+        max-width: 100%;
+    }
+
+    .sobre-img {
+        height: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--clr-nav-bg);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--clr-border);
+        padding: 20px 24px;
+        gap: 16px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .highlights {
+        padding: 0 24px 60px;
+    }
+
+    .cardapio {
+        padding: 60px 24px;
+    }
+
+    .contato {
+        padding: 60px 24px;
+    }
+
+    .form-encomenda {
+        padding: 28px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer {
+        padding: 32px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-img {
+        height: 280px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.88rem;
+    }
+}
+
+/* aqui começa a seção de modal do pop-up que via aparecer na tela logo
+quando abre */
+/* ===== MODAL / POP-UP ===== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    animation: fadeInOverlay 0.3s ease;
+}
+
+.modal-overlay[hidden] {
+    display: none;
+}
+
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-box {
+    background: var(--clr-card);
+    border: 1px solid var(--clr-border);
+    border-radius: 28px;
+    padding: 40px 36px;
+    max-width: 460px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    animation: slideUpModal 0.35s ease;
+}
+
+@keyframes slideUpModal {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: #f5d9d0;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.modal-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    color:#231408
+}
+
+.modal-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color:#f3eeeb;
+}
+
+.modal-texto {
+    font-size: 0.92rem;
+    color: var(--clr-text-muted);
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color:#fae2d3;
+}
+
+.modal-horarios {
+    background: #f3af98;
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 24px;
+    text-align: left;
+    color:#412a1a
+}
+
+.modal-horarios-titulo {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #c9614a;
+    margin-bottom: 10px;
+}
+
+.modal-horarios ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.modal-horarios li {
+    font-size: 0.85rem;
+}
+
+.modal-horarios-obs {
+    font-size: 0.80rem;
+    color: var(--clr-text-muted);
+    margin-top: 10px;
+    font-style: italic;
+    color:#412a1a;
+}
+
+.modal-btn {
+    width: 100%;
+    justify-content: center;
+
+}
