@@ -1,88 +1,235 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação AV1 - Desenvolvimento Web</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bolos artesanais e docinhos finos em Salvador - Doçuras da Eli" />
+  <title>Doçuras da Eli | Confeitaria Artesanal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
 </head>
+
 <body>
 
-    <nav class="slide-nav">
-        <ul>
-            <li><a href="#capa" class="active" title="Capa"></a></li>
-            <li><a href="#equipe" title="Equipe"></a></li>
-            <li><a href="#empresa" title="A Empresa"></a></li>
-            <li><a href="#html" title="HTML Semântico"></a></li>
-            <li><a href="#css" title="CSS Moderno"></a></li>
-            <li><a href="#js" title="JavaScript Iterativo"></a></li>
-            <li><a href="#fim" title="Fim"></a></li>
-        </ul>
+  <header class="site-header" role="banner">
+    <nav class="navbar" aria-label="Navegação principal">
+      <a href="#inicio" class="logo" aria-label="Doçuras da Eli — página inicial">
+        <span class="logo-icon" aria-hidden="true">🎂</span>
+        <span class="logo-text">DOÇURAS <em>DA </em>ELI</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks"
+        aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar modo claro/escuro" title="Alternar tema">
+        <span class="theme-icon" aria-hidden="true">🌙</span>
+      </button>
     </nav>
+  </header>
 
-    <main class="slides-container">
+  <main id="inicio">
+    <section class="hero" aria-label="Boas-vindas">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Confeitaria Artesanal da Doçuras da Eli</p>
+        <h1 class="hero-title">Feito com amor,<br /><em>do jeito que você merece.</em></h1>
+        <p class="hero-sub">Bolos personalizados, docinhos finos e sobremesas que contam histórias. Encomende agora e receba na sua porta.</p>
+        <div class="hero-cta">
+          <a href="#cardapio" class="btn btn-primary">Ver Cardápio</a>
+          <a href="#contato" class="btn btn-outline">Fazer Encomenda</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-img-wrap">
+          <img src="https://images.unsplash.com/photo-1586985289906-406988974504?w=700&q=80"
+            alt="Bolo decorado" class="hero-img" loading="eager" />
+          <div class="hero-badge">
+            <span>✨</span>
+            <strong>100%</strong>
+            <span>Artesanal</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section id="capa" class="slide active">
-            <div class="glass-card">
-                <span class="badget">AV1 - Desenvolvimento Web</span>
-                <h1>Apresentação do Projeto</h1>
-                <p>Análise e Desenvolvimento de Sistemas (ADS) - Unijorge</p>
-                <div class="scroll-down"></div>
-            </div>
-        </section>
+    <section class="highlights" aria-label="Nossos destaques">
+      <article class="highlight-card">
+        <span class="highlight-icon" aria-hidden="true">🎂</span>
+        <h3>Bolos de Festa</h3>
+        <p>Naked cake, bolo de andar e temáticos para seu momento especial.</p>
+      </article>
+      <article class="highlight-card">
+        <span class="highlight-icon" aria-hidden="true">🍫</span>
+        <h3>Docinhos Finos</h3>
+        <p>Brigadeiros gourmet e trufas perfeitas para eventos.</p>
+      </article>
+      <article class="highlight-card">
+        <span class="highlight-icon" aria-hidden="true">🎁</span>
+        <h3>Kits Presenteáveis</h3>
+        <p>Caixas montadas com carinho para presentear quem você ama.</p>
+      </article>
+    </section>
 
-        <section id="equipe" class="slide">
-            <div class="glass-card">
-                <h2>Nossa Equipe</h2>
-                <ul class="team-list">
-                    <li><img src="https://api.dicebear.com/8.x/avataaars/svg?seed=Lucas" alt="Avatar"> Lucas Paranhos - <small>Design & Storytelling</small></li>
-                    <li><img src="https://api.dicebear.com/8.x/avataaars/svg?seed=Vick" alt="Avatar"> Vick - <small>Desenvolvimento Core</small></li>
-                    </ul>
-            </div>
-        </section>
+    <section class="cardapio" id="cardapio" aria-label="Cardápio">
+      <div class="section-header">
+        <p class="section-eyebrow">O que fazemos</p>
+        <h2>Nossas Delícias</h2>
+        <p class="section-sub">Tudo feito na hora, com ingredientes selecionados e muito carinho.</p>
+      </div>
 
-        <section id="empresa" class="slide">
-            <div class="glass-card">
-                <span class="icon">🎂</span>
-                <h2>A Empresa (MEI)</h2>
-                <p>Focamos no negócio de uma Confeitaria Artesanal em Salvador. O site foi projetado para ser um portfólio de produtos e um canal de orçamentos simples e direto.</p>
-            </div>
-        </section>
+      <div class="cardapio-grid">
+        <article class="produto-card" tabindex="0">
+          <figure class="produto-img-wrap">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&q=80" alt="Bolo de chocolate" class="produto-img" />
+          </figure>
+          <div class="produto-info">
+            <span class="produto-tag">Mais pedido</span>
+            <h3 class="produto-nome">Bolo de Chocolate Gourmet</h3>
+            <p class="produto-desc">Massa fofinha com ganache cremosa e morangos frescos.</p>
+            <p class="produto-preco">A partir de <strong>R$ 85,00</strong></p>
+          </div>
+        </article>
 
-        <section id="html" class="slide">
-            <div class="glass-card">
-                <span class="icon">html</span>
-                <h2>HTML5 Semântico</h2>
-                <p>Usamos tags como <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code> e <code>&lt;footer&gt;</code> para garantir acessibilidade e melhor estrutura do documento.</p>
-            </div>
-        </section>
+        <article class="produto-card" tabindex="0">
+          <figure class="produto-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Naked cake" class="produto-img" />
+          </figure>
+          <div class="produto-info">
+            <span class="produto-tag">Especial</span>
+            <h3 class="produto-nome">Naked Cake de Frutas</h3>
+            <p class="produto-desc">Frutas vermelhas selecionadas e chantilly artesanal.</p>
+            <p class="produto-preco">A partir de <strong>R$ 120,00</strong></p>
+          </div>
+        </article>
 
-        <section id="css" class="slide">
-            <div class="glass-card">
-                <span class="icon">css</span>
-                <h2>CSS Moderno e Responsivo</h2>
-                <p>Utilizamos <strong>Flexbox</strong> e <strong>CSS Grid</strong> para layouts fluidos, Variáveis CSS para o tema Dark e Media Queries para adaptação em dispositivos móveis (Mobile First).</p>
-            </div>
-        </section>
+        <article class="produto-card" tabindex="0">
+          <figure class="produto-img-wrap">
+            <img src="https://images.unsplash.com/photo-1612203985729-70726954388c?w=500&q=80" alt="Brigadeiros" class="produto-img" />
+          </figure>
+          <div class="produto-info">
+            <span class="produto-tag">Novidade</span>
+            <h3 class="produto-nome">Caixa de Brigadeiros</h3>
+            <p class="produto-desc">Sabores variados: Pistache, Limão Siciliano e Belga.</p>
+            <p class="produto-preco">A partir de <strong>R$ 45,00</strong></p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-        <section id="js" class="slide">
-            <div class="glass-card">
-                <span class="icon">js</span>
-                <h2>JavaScript e DOM</h2>
-                <p>Manipulação de DOM para o menu hambúrguer, Pop-up e alternância de temas. Validações completas de formulário com Regex.</p>
-            </div>
-        </section>
+    <section class="sobre" id="sobre" aria-label="Sobre a confeitaria">
+      <div class="sobre-img-col">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Confeiteira trabalhando" class="sobre-img" />
+      </div>
+      <div class="sobre-text-col">
+        <p class="section-eyebrow">Nossa História</p>
+        <h2>Feito com as mãos, entregue com o coração</h2>
+        <p>A Doçuras da Eli nasceu da paixão por transformar ingredientes simples em momentos inesquecíveis.</p>
+        <p>Trabalhamos com uma linha completa de confeitaria artesanal em Salvador, focando sempre na qualidade e no sabor que lembra casa.</p>
+        <ul class="sobre-lista" role="list">
+          <li>✔ Ingredientes frescos e selecionados</li>
+          <li>✔ Personalização completa</li>
+          <li>✔ Entrega em toda Salvador</li>
+          <li>✔ CNPJ ativo — Nota Fiscal disponível</li>
+        </ul>
+      </div>
+    </section>
 
-        <section id="fim" class="slide">
-            <div class="glass-card">
-                <span class="icon">🎉</span>
-                <h1>Obrigado!</h1>
-                <p>Dúvidas? <br> Lucas e Equipe</p>
-            </div>
-        </section>
+    <section class="contato" id="contato" aria-label="Formulário de encomenda">
+      <div class="section-header">
+        <p class="section-eyebrow">Fale comigo</p>
+        <h2>Faça sua Encomenda</h2>
+        <p class="section-sub">Preencha os campos abaixo e a Eli entrará em contato em breve.</p>
+      </div>
 
-    </main>
+      <form class="form-encomenda" id="formEncomenda" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nome">Nome completo *</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+            <span class="form-error" id="nomeErr"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+            <span class="form-error" id="emailErr"></span>
+          </div>
+        </div>
 
-    <script src="script.js"></script>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="telefone">WhatsApp *</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(71) 90000-0000" required maxlength="15" />
+            <span class="form-error" id="telefoneErr"></span>
+          </div>
+          <div class="form-group">
+            <label for="produto">Produto desejado *</label>
+            <select id="produto" name="produto" required>
+              <option value="">Selecione...</option>
+              <option value="bolo-festa">Bolo de Festa</option>
+              <option value="naked-cake">Naked Cake</option>
+              <option value="brigadeiro">Brigadeiro Gourmet</option>
+              <option value="kit">Kit Presenteável</option>
+            </select>
+            <span class="form-error" id="produtoErr"></span>
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="mensagem">Detalhes do pedido</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Cores, temas, sabores..."></textarea>
+        </div>
+
+        <div class="form-group full-width form-check">
+          <input type="checkbox" id="lgpd" name="lgpd" required />
+          <label for="lgpd">Concordo com o uso dos meus dados para esta encomenda.</label>
+          <span class="form-error" id="lgpdErr"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit" id="btnSubmit">Enviar Encomenda 🎂</button>
+        <div class="form-success" id="formSuccess" hidden>🎉 Recebido! Entraremos em contato em breve.</div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-brand">🎂 DOÇURAS <em>DA</em> ELI</p>
+      <p class="footer-info"> Salvador - BA · Confeitaria Artesanal</p>
+      <p class="footer-copy">© 2026 Doçuras da Eli. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="modalBemVindo" hidden role="dialog">
+    <div class="modal-box">
+      <button class="modal-close" id="fecharBemVindo">✕</button>
+      <div class="modal-icon">🎂</div>
+      <h2 class="modal-titulo" id="modalBemVindoTitulo">Bem-vinda à Doçuras da Eli</h2>
+      <p class="modal-texto">Bolos artesanais, docinhos e kits feitos com muito amor para você. 🤍</p>
+      <div class="modal-horarios">
+        <p class="modal-horarios-titulo">🕐 Atendimento</p>
+        <ul>
+          <li><strong>Segunda a Sexta</strong> — 9h às 18h</li>
+          <li><strong>Sábado</strong> — 9h às 14h</li>
+        </ul>
+        <p class="modal-horarios-obs">⚠️ Encomendas com 2 dias de antecedência.</p>
+      </div>
+      <button class="btn btn-primary modal-btn" id="fecharBemVindoBtn">Ver Cardápio 🎂</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
