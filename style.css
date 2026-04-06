@@ -1,0 +1,202 @@
+/* --- Variáveis herdadas do site original --- */
+:root {
+  --primary: #f29f05;       /* Laranja / Destaque */
+  --secondary: #262626;     /* Cinza Escuro */
+  --bg-dark: #121212;        /* Fundo Super Escuro */
+  --card-dark: #1e1e1e;      /* Fundo do Card */
+  --text-white: #ffffff;
+  --text-muted: #a0a0a0;
+  --glass-bg: rgba(30, 30, 30, 0.7); /* Vidro embaçado */
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Reset e Scroll-Snap (Base da App) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-shadow: border-box;
+}
+
+html {
+    /* Mágica do Scroll-Snap */
+    scroll-snap-type: y mandatory; 
+    scroll-behavior: smooth;
+    overflow: hidden; /* JS vai controlar o scroll */
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Inter', sans-serif; /* Mesma fonte sugerida */
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+/* --- Container Principal de Slides --- */
+.slides-container {
+    height: 100vh;
+    width: 100%;
+}
+
+/* --- Estilo de cada Slide --- */
+.slide {
+    height: 100vh; /* Ocupa a tela inteira */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start; /* Trava no início da seção */
+    position: relative;
+    padding: 20px;
+}
+
+/* --- O Efeito Glassmorphism (Cartão de Vidro) --- */
+.glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px); /* Efeito de vidro embaçado */
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+}
+
+/* --- Tipografia e Elementos --- */
+h1 {
+    font-size: 3rem;
+    color: var(--primary);
+    margin: 15px 0;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--text-white);
+    margin-bottom: 20px;
+}
+
+p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+code {
+    background-color: rgba(242, 159, 5, 0.1);
+    color: var(--primary);
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.badget {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    display: inline-block;
+}
+
+/* --- Lista da Equipe --- */
+.team-list {
+    list-style: none;
+    text-align: left;
+    display: inline-block;
+}
+
+.team-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    color: var(--text-white);
+    font-size: 1.2rem;
+}
+
+.team-list img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+}
+
+small {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- Navegação Lateral --- */
+.slide-nav {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.slide-nav ul {
+    list-style: none;
+}
+
+.slide-nav li {
+    margin: 15px 0;
+}
+
+.slide-nav a {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.slide-nav a:hover {
+    background-color: var(--text-white);
+    transform: scale(1.2);
+}
+
+.slide-nav a.active {
+    background-color: var(--primary);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.3);
+}
+
+/* --- Seta para Baixo (Indicador de Scroll) --- */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 50px;
+    background: linear-gradient(to top, rgba(255,255,255,0.5), transparent);
+}
+
+/* --- Responsividade (Media Queries) --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.6rem; }
+    .glass-card { padding: 25px; }
+    .slide-nav { right: 15px; }
+    .team-list li { font-size: 1rem; }
+}
